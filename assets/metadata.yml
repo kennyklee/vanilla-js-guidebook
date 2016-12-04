@@ -1,0 +1,14 @@
+---
+title:
+- type: main
+  text: Ditching jQuery
+- type: subtitle
+  text: A beginner's guide to vanilla JavaScript.
+creator:
+- role: author
+  text: Chris Ferdinandi
+publisher:  Go Make Things, LLC
+date: A date or version number
+rights: Copyright 2016 Chris Ferdinandi and Go Make Things, LLC. All Rights Reserved.
+cover-image: assets/cover.png
+---
