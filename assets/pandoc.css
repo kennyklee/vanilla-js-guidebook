@@ -10,7 +10,7 @@ body {
 	font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 	line-height: 1.7;
 	padding: 1em;
-	margin: auto;
+	/*margin: auto;*/
 	max-width: 42em;
 	background: #ffffff;
 }
@@ -37,7 +37,7 @@ a:focus {
 }
 
 p {
-	margin: 1em 0;
+	margin: 0 0 1em;
 }
 
 img {
@@ -120,9 +120,10 @@ pre, code, kbd, samp {
 }
 
 pre {
-	page-break-inside: avoid;
+	padding: 0 0 1em;
+	page-break-inside: avoid !important;
 	white-space: pre;
-	white-space: pre-wrap;
+	white-space: pre-wrap !important;
 	word-wrap: break-word;
 }
 
