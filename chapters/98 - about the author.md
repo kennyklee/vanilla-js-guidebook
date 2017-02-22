@@ -1,4 +1,14 @@
 
 # About the Author
 
-Here's a sample about the author page. You might also include an image and some contact info here.
+![](assets/chris-ferdinandi-high-res.jpg){.author-img}
+
+Hi, I’m Chris Ferdinandi. I help people build insanely fast websites that work for anyone on any device.
+
+I love pirates, puppies, and Pixar movies, and live near horse farms in rural Massachusetts. I run Go Make Things with Bailey Puppy, a lab-mix from Tennessee.
+
+You can find me:
+
+- On my website at [GoMakeThings.com](https://gomakethings.com).
+- By email at [chris@gomakethings.com](mailto:chris@gomakethings.com).
+- On Twitter at <a href="https://twitter.com/ChrisFerdinandi">@ChrisFerdinandi</a>.
