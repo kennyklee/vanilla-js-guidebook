@@ -3,7 +3,7 @@
 
 ![](assets/chris-ferdinandi-high-res.jpg){.author-img}
 
-Hi, I’m Chris Ferdinandi. I help people build insanely fast websites that work for anyone on any device.
+Hi, I’m Chris Ferdinandi. I help people learn vanilla JavaScript.
 
 I love pirates, puppies, and Pixar movies, and live near horse farms in rural Massachusetts. I run Go Make Things with Bailey Puppy, a lab-mix from Tennessee.
 
