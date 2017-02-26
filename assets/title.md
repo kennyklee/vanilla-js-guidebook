@@ -6,6 +6,6 @@ By Chris Ferdinandi
 
 Go Make Things, LLC
 
-v1.2.0
+v2.0.0
 
-Copyright 2016 Chris Ferdinandi and Go Make Things, LLC. All Rights Reserved.
+Copyright 2017 Chris Ferdinandi and Go Make Things, LLC. All Rights Reserved.

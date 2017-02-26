@@ -1,40 +1,47 @@
 
 # Intro
 
-jQuery is holding you back.
+A few years ago, I was a front end developer who was completely overwhelmed by JavaScript.
 
-It slows down your sites, especially on mobile devices and spotty connections. jQuery 3, minified, is *only* 82kb, which might not seem big, especially if you regularly have access to a fast internet connection. But for your visitors who are on older devices, slower connections, or spotty mobile networks, a hanging script can cripple your website.
+I'd search StackOverflow for solutions, copy/paste code, and just hope that it would work. Most of the time it wouldn't. When it did, I had no idea how or why. Does this sound familiar?
 
-If you host jQuery from a CDN and the file fails to load, it can complete break your site. This actually happened back in 2013 OpenDNS temporarily blocked access to Google-hosted files and broke a ton of sites in the process.^[[http://www.itsadam.co.uk/google-hosted-jquery-or-other-scripts-not-working/](http://www.itsadam.co.uk/google-hosted-jquery-or-other-scripts-not-working/)]
+Eventually, I started to feel comfortable hacking together some jQuery, but I never felt like I really understood how it worked.
 
-And using jQuery forces you to choose between limiting the frameworks you work with or adding additional performance-crushing dependencies to your site.
+I decided to convert a few of my jQuery scripts into vanilla JavaScript. After a few dozen side projects and a lot of trial **and** error, it finally clicked.
+
+I want to help you learn vanilla JavaScript without all of the painful false starts and roadblocks that I encountered.
+
+## Who this is for
+
+*Ditching jQuery* is for...
+
+- Developers who can hack together some jQuery but don’t feel like they really know JavaScript.
+- People who want to write better jQuery (learning vanilla JS will help you code better, period).
+- People who want to learn other frameworks--like React or Angular--but don’t feel like they even know where to start.
+- Web developers who want to opt-out of the JavaScript framework rat race altogether.
+- Front-end developers who want to build websites that are faster and more reliable.
 
 
-## Abstraction isn't always a good thing
+## What you'll learn
 
-jQuery used to smooth out weird inconsistencies between browsers. That's no longer the case.
+This book covers...
 
-Today, modern JavaScript and browser APIs are as easy to use as jQuery and work consistently across browsers. And jQuery 3 only supports Internet Explorer 9 and up, so you don't even gain any backwards compatibility.
+- Modern vanilla JavaScript equivalents of common jQuery APIs.
+- The easy way to ensure cross-browser compatibility.
+- How to write scripts that are accessible to everyone.
+- How to debug your code when things go wrong.
+- A simple trick to make writing JavaScript faster and easier.
+- How to put it all together and create real, working scripts.
 
-It *does* provide some abstraction for certain tasks, which allows you to right fewer lines of code.
+Along the way, there will be a ton of **labs** where you'll practice what you just learned. At the end, we'll work together to create Invisible Ink, a JavaScript accordion plugin.
 
-**But...** that abstraction hides what's really happening under the hood and is more forgiving of mistakes, which makes it easier for you to write bad code. And writing a few less lines of code is kind of pointless if you have to download an additional 10,000 lines of code to do it.
 
-This book will teach you how JavaScript (and the browser) really work. In the process, you’ll become a better developer and boost your career.
+## Getting Setup
 
-## How to ditch jQuery
+All of the source code for the lessons in this book are avilable on GitHub ([https://github.com/cferdinandi/ditching-jquery-source-code](https://github.com/cferdinandi/ditching-jquery-source-code)). Each section also includes a lab (the `lab {section name}.html` file), and the answers to the lab (the `lab {section name} answers.html` file).
 
-In the next chapter, we'll look at vanilla JavaScript equivalents of common jQuery APIs. As you'll see, a lot of modern vanilla JS APIs work in much the same way that jQuery APIs do.
+To make things easier, I've inlined everything. There's some basic CSS up in the `<head>`, some sample `<body>` content to work with, and all of your scripts are down at the bottom.
 
-Next, we'll look at how to easily ensure cross-browser compatibility and provide access to all browsers (even Netscape and IE 5). This used to be one of the biggest reasons to use jQuery, but it's far easier today.
+I make heavy use of `console.log()` to spit out the results of the lessons and labs into the Console tab of Developer Tools. All modern browsers--Chrome, Firefox, Safari, and Microsoft Edge--have great browser tools baked right in.
 
-After that, we'll get into some JavaScript techniques and best practices. Things like how to properly scope your code, and how to debug it when things go wrong.
-
-The best way to learn vanilla JavaScript, though, is to actually write code.
-
-In the last part of this book, we'll work on two vanilla JS projects:
-
-1. Invisible Ink, an expand-and-collapse/accordion script.
-2. Play, a YouTube video player.
-
-Let's get started!
+I'd also recommend getting a good text editor. My text editor of choice is Sublime 2 ([http://www.sublimetext.com/2](http://www.sublimetext.com/2)), but Atom (from GitHub) ([https://atom.io](https://atom.io/)) is a great free cross-platform alternative with most of the same features.

@@ -8,7 +8,7 @@ creator:
 - role: author
   text: Chris Ferdinandi
 publisher:  Go Make Things, LLC
-date: v1.2.0
-rights: Copyright 2016 Chris Ferdinandi and Go Make Things, LLC. All Rights Reserved.
+date: v2.0.0
+rights: Copyright 2017 Chris Ferdinandi and Go Make Things, LLC. All Rights Reserved.
 cover-image: assets/cover.png
 ---

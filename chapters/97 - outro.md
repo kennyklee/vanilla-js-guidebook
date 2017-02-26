@@ -15,6 +15,7 @@ Here are some thoughts on how to keep building your vanilla JavaScript skills:
 4. Browse the Q&A for `vanilla JS` on Stack Overflow.^[[http://stackoverflow.com/search?q=vanilla+js](http://stackoverflow.com/search?q=vanilla+js)]
 5. Read the Mozilla Developer Network's JavaScript documentation.^[[https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)] I would probably do this in conjunction with items #1 and #2.
 
+
 ## Vanilla JS Project Ideas
 
 Some ideas to get you started.
@@ -26,11 +27,13 @@ Some ideas to get you started.
 - **Same Height.** Set all content areas in a group to the same height. If they're stacked one-on-top-of-the-other, let me reset to their default height.
 - **Notifications.** Click a button to make a notification message appear on the page. Click an "X" in the notification to remove it. Let the notification text get set dynamically via some data on the button that toggles it.
 
+
 ## How to find vanilla JS open source projects
 
-There's a growing list at [youmightnotneedjqueryplugins.com](http://youmightnotneedjqueryplugins.com/). That's a great place to start.
+I'm maintaining a growing list of third-party vanilla JavaScript plugins on the Ditching jQuery Resources page ([https://ditchingjquery.com/resources/](https://ditchingjquery.com/resources/)). That's a great place to start.
 
 You can also just google, `{type of script you're looking for} vanilla js`. A lot of impressive plugins either don't require jQuery, or offer both jQuery and vanilla JS versions.
+
 
 ## Don't feel like you have to go 100% vanilla JS immediately
 
