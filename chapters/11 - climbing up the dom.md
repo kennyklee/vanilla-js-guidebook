@@ -140,12 +140,3 @@ var elem = document.querySelector( '#d3' );
 var parents = getParents( elem.parentNode );
 var parentsWithWrapper = getParents( elem.parentNode, '.wrapper' );
 ```
-
-
-## The Lab: Climbing Up the DOM
-
-For this lab:
-
-1. Get the element with an ID of `#d3`.
-2. Get all of the elements parents.
-3. Add the `.bg-green` class to all of them until you get to the `document.body`.

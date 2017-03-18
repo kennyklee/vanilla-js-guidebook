@@ -3,7 +3,7 @@
 
 Vanilla JavaScript provides the `classList` API, which works very similar to jQuery's class manipulation APIs.
 
-All modern browsers support it, but IE9 does not. And new versions of IE don't implement all of its features. A small polyfill from Eli Grey provides IE9+ support if needed. ([https://github.com/eligrey/classList.js/](https://github.com/eligrey/classList.js/))
+All modern browsers support it, but IE9 does not. And new versions of IE don't implement all of its features. A small polyfill from Eli Grey provides IE9+ support if needed. ^[[https://github.com/eligrey/classList.js/](https://github.com/eligrey/classList.js/)]
 
 ## classList.add()
 
@@ -83,14 +83,3 @@ elem.className += ' vanilla-js';
 // Replace all classes on an element
 elem.className = 'new-class';
 ```
-
-
-## The Lab: Classes
-
-For this lab:
-
-1. Get the all of the `<divs>` that have a `[data-sandwich]` value of `ham`.
-2. Loop through each one.
-3. If it has a class of `.bg-red`, remove it.
-3. If it has a class of `.bg-blue`, change it to `.bg-red`.
-5. If it has a class of `.bg-navy`, change it to `.bg-green`.

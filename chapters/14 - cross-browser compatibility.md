@@ -1,7 +1,7 @@
 
 # Cross-Browser Compatibility
 
-The web is for everyone, but support is not the same as optimization. ([http://bradfrostweb.com/blog/mobile/support-vs-optimization/](http://bradfrostweb.com/blog/mobile/support-vs-optimization/))
+The web is for everyone, but support is not the same as optimization. ^[[http://bradfrostweb.com/blog/mobile/support-vs-optimization/](http://bradfrostweb.com/blog/mobile/support-vs-optimization/)]
 
 Rather than trying to provide the same level of functionality for older browsers, we can use progressive enhancement to serve a basic experience to all browsers (even Netscape and IE 5), while newer browsers that support modern APIs and techniques get the enhanced experience.
 
@@ -12,7 +12,7 @@ They still have access to all of the content. They just don’t always get the s
 
 ## Cutting the Mustard
 
-"Cutting the Mustard" is a feature detection technique coined by the BBC. ([http://responsivenews.co.uk/post/18948466399/cutting-the-mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard))
+"Cutting the Mustard" is a feature detection technique coined by the BBC. ^[[http://responsivenews.co.uk/post/18948466399/cutting-the-mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)]
 
 A simple browser test determines whether or not a browser supports modern JavaScript APIs. If it does, it gets the enhanced experience. If not, it gets a more basic one.
 

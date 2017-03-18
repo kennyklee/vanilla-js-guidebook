@@ -18,7 +18,7 @@ $elem.css( 'background-color', '#000000' );
 
 ## Get Styles
 
-There are a couple different ways to get styles in vanilla JavaScript. The Mozilla Developer Network provides a comprehensive list of available attributes. ([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference))
+There are a couple different ways to get styles in vanilla JavaScript. The Mozilla Developer Network provides a comprehensive list of available attributes. ^[[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)]
 
 You can use `style.{css property name}`. This only works for inline styles, however. If you're trying to get a value specified in a stylesheet, you'll get `null` instead.
 
@@ -43,14 +43,3 @@ var bgColor = window.getComputedStyle( elem ).backgroundColor;
 var elem = document.querySelector( '#b' );
 elem.style.backgroundColor = '#000000';
 ```
-
-
-## The Lab: Styles
-
-For this lab:
-
-1. Get the all of the `<divs>`.
-2. Loop through each one.
-3. Check the element's height.
-4. If it's less than `25px`, set the `background-color` to `darkslategrey`.
-5. If it's greater than or equal to `25px`, set the `background-color` to `purple`.

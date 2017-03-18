@@ -56,12 +56,3 @@ var elemsRed = document.querySelectorAll( '.bg-red' );
 // Get all elements with the [data-snack] attribute
 var elemsSnacks = document.querySelectorAll( '[data-snack]' );
 ```
-
-
-## The Lab: Selectors
-
-For this lab:
-
-1. Get the first element that has a class of `.bg-red` and a `[data-sandwich]` value of `tuna`.
-2. Get the all of the `<divs>` that have a `[data-sandwich]` value of `ham`.
-3. Log the results of both to the console.

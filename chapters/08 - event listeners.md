@@ -20,7 +20,7 @@ $elem.click(function( event ) {
 
 ## addEventListner
 
-Listen for events on an element. You can find a full list of available events on the Mozilla Developer Network. ([https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events))
+Listen for events on an element. You can find a full list of available events on the Mozilla Developer Network. ^[[https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)]
 
 ```javascript
 var btn = document.querySelector( '#click-me' );
@@ -72,11 +72,9 @@ window.addEventListener( 'scroll', someFunction, false );
 
 ## Event Debouncing
 
-Events like `scroll` and `resize` can cause huge performance issues on certain browsers. Paul Irish explains:
+Events like `scroll` and `resize` can cause huge performance issues on certain browsers. Paul Irish explains:^[[https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/](https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/)]
 
 > If you’ve ever attached an event handler to the window’s resize event, you have probably noticed that while Firefox fires the event slow and sensibly, IE and Webkit go totally spastic.
->
-> **Source:** [https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/](https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/)
 
 Debouncing is a way of forcing an event listener to wait a certain period of time before firing again. To use this approach, we'll setup a `timeout` element. This is used as a counter to tell us how long it's been since the event was last run.
 
@@ -121,13 +119,3 @@ document.addEventListener('focus', function (event) {
 	// Run functions whenever an element in the document comes into focus
 }, false);
 ```
-
-
-## The Lab: Event Listeners
-
-For this lab:
-
-1. Listen for `click` events.
-2. If the clicked element has a data attribute of `[data-click-me]`:
-    a. Change the `background-color` to the value of `[data-click-me]`.
-    b. Update the value of `[data-click-me]` to the previous background color.

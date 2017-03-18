@@ -158,11 +158,3 @@ forEach(lunch, function (item, key) {
 ```
 
 It's worth mentioning that because the helper uses a function, you can only skip to the next item using `return`. There's no way to terminate the loop entirely.
-
-
-## The Lab: Loops
-
-For this lab:
-
-1. Get the all of the `<divs>` that have a `[data-sandwich]` value of `ham`.
-2. Loop through each one and log it in the console.

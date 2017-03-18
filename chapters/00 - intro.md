@@ -38,10 +38,10 @@ Along the way, there will be a ton of **labs** where you'll practice what you ju
 
 ## Getting Setup
 
-All of the source code for the lessons in this book are avilable on GitHub ([https://github.com/cferdinandi/ditching-jquery-source-code](https://github.com/cferdinandi/ditching-jquery-source-code)). Each section also includes a lab (the `lab {section name}.html` file), and the answers to the lab (the `lab {section name} answers.html` file).
+All of the source code for the lessons in this book are avilable on GitHub ^[[https://github.com/cferdinandi/ditching-jquery-source-code](https://github.com/cferdinandi/ditching-jquery-source-code)].
 
 To make things easier, I've inlined everything. There's some basic CSS up in the `<head>`, some sample `<body>` content to work with, and all of your scripts are down at the bottom.
 
-I make heavy use of `console.log()` to spit out the results of the lessons and labs into the Console tab of Developer Tools. All modern browsers--Chrome, Firefox, Safari, and Microsoft Edge--have great browser tools baked right in.
+I make heavy use of `console.log()` in the source code to spit out the results of the lessons into the Console tab of Developer Tools. All modern browsers--Chrome, Firefox, Safari, and Microsoft Edge--have great browser tools baked right in.
 
-I'd also recommend getting a good text editor. My text editor of choice is Sublime 2 ([http://www.sublimetext.com/2](http://www.sublimetext.com/2)), but Atom (from GitHub) ([https://atom.io](https://atom.io/)) is a great free cross-platform alternative with most of the same features.
+I'd also recommend getting a good text editor. My text editor of choice is Sublime 2 ^[[http://www.sublimetext.com/2](http://www.sublimetext.com/2)], but Atom (from GitHub) ^[[https://atom.io](https://atom.io/)] is a great free cross-platform alternative with most of the same features.
