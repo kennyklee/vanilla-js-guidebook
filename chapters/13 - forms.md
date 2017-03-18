@@ -69,14 +69,3 @@ isChecked = checkbox.checked;
 var radio = document.querySelector( '#d1' );
 radio.checked = true;
 ```
-
-
-## The Lab: Forms
-
-For this lab:
-
-1. Get all form elements.
-2. If the form is a text input, change the type to `password`.
-3. if the form is a checkbox, check it.
-4. If it's a radio button, check if it's the selected option. If it is, log the value in the console.
-5. If it's a textarea, give it a value.

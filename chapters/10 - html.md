@@ -34,11 +34,3 @@ You can also use the `innerHTML` API to set HTML.
 var elem = document.querySelector( '#a' );
 elem.innerHTML = 'We can dynamically change the HTML. We can even include HTML elements like <a href="#">this link</a>.';
 ```
-
-
-## The Lab: HTML
-
-For this lab:
-
-1. Get the first element with an attribute of `[data-snack]` equal to `chips`.
-2. Add to the existing HTML with a short note about chips.

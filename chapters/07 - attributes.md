@@ -29,7 +29,7 @@ var elem = document.querySelector( '#a' );
 var dataSandwich = elem.getAttribute( 'data-sandwich' );
 ```
 
-It can be used to get attributes like ID, title, and so on as well, but this is better done using the attribute directly. You can view a full list of HTML attributes on the Mozilla Developer Network. ([https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes))
+It can be used to get attributes like ID, title, and so on as well, but this is better done using the attribute directly. You can view a full list of HTML attributes on the Mozilla Developer Network. ^[[https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)]
 
 ```javascript
 // These do the same thing
@@ -66,13 +66,3 @@ if ( elem.hasAttribute( 'data-snack' ) ) {
 	// Do something...
 }
 ```
-
-
-## The Lab: Attributes
-
-For this lab:
-
-1. Get all `<divs>`.
-2. Loop through each one.
-3. If it has an attribute of `[data-sandwich]`, give it a class of `.bg-green`.
-4. If the `[data-sandwich]` attribute is `ham`, remove all classes.

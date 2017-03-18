@@ -9,7 +9,7 @@ I find it helpful to identify what each of those steps should be ahead of time, 
 
 ## An example
 
-Here's an actual example from when I created my Right Height plugin. ([https://github.com/cferdinandi/right-height](https://github.com/cferdinandi/right-height))
+Here's an actual example from when I created my Right Height plugin. ^[[https://github.com/cferdinandi/right-height](https://github.com/cferdinandi/right-height)]
 
 Right Height will take a set of content areas that are different heights and make them all the same height. When those content areas are all stacked one-on-top-of-the-other (say, in a single-column mobile view), it leaves them at their natural height.
 
