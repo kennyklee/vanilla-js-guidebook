@@ -26,7 +26,7 @@ While `querySelector()` and `querySelectorAll()` search through all levels withi
 
 ```javascript
 var elem = document.querySelector( '#some-elem' );
-var decendants = wrapper.childNodes;
+var decendants = wrapper.children;
 ```
 
 ### Browser Compatibility

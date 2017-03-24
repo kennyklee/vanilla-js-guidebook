@@ -29,7 +29,7 @@ These methods can also be used to manipulate other types of attributes (things l
 Supported in all modern browsers, and at least back to IE6.
 
 
-## Element Attributes
+## Attribute Properties
 
 You can get and set attributes directly on an element. View a full list of HTML attributes on the Mozilla Developer Network.^[[https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)]
 
@@ -44,7 +44,7 @@ var tabindex = elem.tabindex;
 // Set attributes
 elem.id = 'new-id';
 elem.title = 'The title for this thing is awesome!';
-elem.tabindex = '-1';
+elem.tabIndex = '-1';
 ```
 
 ### Browser Compatibility

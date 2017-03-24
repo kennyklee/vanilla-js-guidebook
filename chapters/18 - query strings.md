@@ -19,10 +19,10 @@ var getQueryString = function ( field, url ) {
 
 // Examples
 // http://example.com?sandwich=turkey&snack=cookies
-var thisOne = getQueryString( 'sandwich' ); // returns 'turkey'
-var thatOne = getQueryString( 'snack' ); // returns 'cookies'
-var anotherOne = getQueryString( 'dessert' ); // returns null
-var passedInURL = getQueryString( 'drink', 'http://another-example.com?drink=soda' ); // returns 'soda'
+var sandwich = getQueryString( 'sandwich' ); // returns 'turkey'
+var snack = getQueryString( 'snack' ); // returns 'cookies'
+var dessert = getQueryString( 'dessert' ); // returns null
+var drink = getQueryString( 'drink', 'http://another-example.com?drink=soda' ); // returns 'soda'
 ```
 
 ## Browser Compatibility

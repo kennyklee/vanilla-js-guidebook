@@ -100,7 +100,7 @@ Setting `useCapture` to `true` allows you to take advantage of event bubbling fo
 // Listen for all focus events in the document
 document.addEventListener('focus', function (event) {
 	// Run functions whenever an element in the document comes into focus
-}, false);
+}, true);
 ```
 
 ## Browser Compatibility

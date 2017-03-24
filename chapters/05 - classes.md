@@ -26,7 +26,9 @@ elem.classList.remove( 'some-other-class' );
 elem.classList.toggle( 'toggle-me' );
 
 // Check if an element has a specfic class
-elem.classList.contains( 'yet-another-class' );
+if ( elem.classList.contains( 'yet-another-class' ) ) {
+	// Do something...
+}
 ```
 
 ### Browser Compatibility

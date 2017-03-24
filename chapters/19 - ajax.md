@@ -9,13 +9,35 @@ For testing purposes, we'll pull data from JSON Placeholder.^[[https://jsonplace
 
 ```javascript
 // After you've included Atomic with your scripts...
-atomic('https://jsonplaceholder.typicode.com/posts')
+
+// GET
+atomic.get('https://jsonplaceholder.typicode.com/posts')
 	.success(function (data, xhr) {
 		// What do when the request is successful
 		console.log(data);
 		console.log(xhr);
 	})
-	.failure(function () {
+	.error(function () {
+		// What do when the request fails
+		console.log( 'The request failed!' );
+	})
+	.always(function (data, xhr) {
+		// Code that should run regardless of the request status
+	});
+
+// POST
+var data = {
+	title: 'foo',
+	body: 'bar',
+	userId: 1
+};
+atomic.post('https://jsonplaceholder.typicode.com/posts', data)
+	.success(function (data, xhr) {
+		// What do when the request is successful
+		console.log(data);
+		console.log(xhr);
+	})
+	.error(function () {
 		// What do when the request fails
 		console.log( 'The request failed!' );
 	})
