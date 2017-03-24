@@ -1,7 +1,13 @@
 
 # Cross-Browser Compatibility
 
-The web is for everyone, but support is not the same as optimization. ^[[http://bradfrostweb.com/blog/mobile/support-vs-optimization/](http://bradfrostweb.com/blog/mobile/support-vs-optimization/)]
+Vanilla JavaScript browser compatibility can be inconsistent and difficult to figure out. This is one of the big allures for libraries and frameworks.
+
+In this section, I'm going to teach you a super-simple technique you can use to ensure a great experience for your users, regardless of their web browser.
+
+## Support vs. Optimization
+
+The web is for everyone, but support is not the same as optimization.^[[http://bradfrostweb.com/blog/mobile/support-vs-optimization/](http://bradfrostweb.com/blog/mobile/support-vs-optimization/)]
 
 Rather than trying to provide the same level of functionality for older browsers, we can use progressive enhancement to serve a basic experience to all browsers (even Netscape and IE 5), while newer browsers that support modern APIs and techniques get the enhanced experience.
 
@@ -12,13 +18,12 @@ They still have access to all of the content. They just don’t always get the s
 
 ## Cutting the Mustard
 
-"Cutting the Mustard" is a feature detection technique coined by the BBC. ^[[http://responsivenews.co.uk/post/18948466399/cutting-the-mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)]
+"Cutting the Mustard" is a feature detection technique coined by the BBC.^[[http://responsivenews.co.uk/post/18948466399/cutting-the-mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)]
 
-A simple browser test determines whether or not a browser supports modern JavaScript APIs. If it does, it gets the enhanced experience. If not, it gets a more basic one.
+A simple browser test determines whether or not a browser supports modern JavaScript methods and browser APIs. If it does, the browser gets the enhanced experience. If not, it gets a more basic one.
 
 ```javascript
-var supports = 'querySelector' in document &&
-               'addEventListener' in window;
+var supports = 'querySelector' in document && 'addEventListener' in window;
 
 if ( supports ) {
 	// Codes goes here...
@@ -28,6 +33,8 @@ if ( supports ) {
 
 if ( !supports ) return;
 ```
+
+
 
 ### What browsers are supported?
 
@@ -44,6 +51,14 @@ To quote the BBC:
 > - Windows 7.5+ (new Mango version)
 > - Mobile Firefox (all the versions we tested)
 > - Opera Mobile (all the versions we tested)
+
+### If you're using `classList`
+
+If you're using `classList`, you need to either include the polyfill, or check for `classList` support. Without the polyfill, your IE support starts at IE10 instead of IE9.
+
+```javascript
+var supports = 'querySelector' in document && 'addEventListener' in window && 'classList' in document.createElement('_');
+```
 
 
 ## Don't hide content until JavaScript loads

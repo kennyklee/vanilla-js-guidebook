@@ -1,31 +1,12 @@
 
 # Event Listeners
 
-## jQuery
-
-jQuery uses the `on()` method to listen for events, and also supplies some event specific methods (like `.click()`).
-
-```javascript
-var $elem = $( '#click-me' );
-
-$elem.on( 'click', function( event ) {
-	console.log( 'clicked' );
-});
-
-$elem.click(function( event ) {
-	console.log( 'also clicked' );
-});
-```
-
-
-## addEventListner
-
-Listen for events on an element. You can find a full list of available events on the Mozilla Developer Network. ^[[https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)]
+Use `addEventListener` to listen for events on an element. You can find a full list of available events on the Mozilla Developer Network. ^[[https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)]
 
 ```javascript
 var btn = document.querySelector( '#click-me' );
 btn.addEventListener('click', function ( event ) {
-	console.log( event ); // The event
+	console.log( event ); // The event details
 	console.log( event.target ); // The clicked element
 }, false);
 ```
@@ -33,7 +14,9 @@ btn.addEventListener('click', function ( event ) {
 
 ## Multiple Targets
 
-jQuery's `.on()` method automatically listens for clicks on any element that matches your selector. The vanilla JavaScript `addEventListener()` API requires you to specific specific, individual elements to listen to.
+The vanilla JavaScript `addEventListener()` function requires you to pass in a specific, individual element to listen to. You cannot pass in an array or node list of matching elements like you might in jQuery or other frameworks.
+
+To add the same event listener to multiple elements, you also **cannot** just use a `for` loop because of how the `i` variable is scoped (as in, it's not and changes with each loop).
 
 Fortunately, there's a *really* easy way to get a jQuery-like experience: event bubbling.
 
@@ -54,7 +37,7 @@ window.addEventListener('click', function ( event ) {
 
 ## Multiple Events
 
-jQuery's `.on()` method also allows you to pass in multiple events to listen to. With vanilla JavaScript, you need to add an event listener for each event individually.
+In vanilla JavaScript, each event type requires it's own event listener. Unfortunately, you *can't* pass in multiple events to a single listener like you might in jQuery and other frameworks.
 
 **But...** by using a named function and passing that into your event listener, you can avoid having to write the same code over and over again.
 
@@ -109,7 +92,7 @@ window.addEventListener('resize', function ( event ) {
 
 ## Use Capture
 
-The last argument in `addEventListener()` is `useCapture`, and it specifies whether or not you want to "capture" the event. For most even types, this should be set to `false`. But certain events, like `focus`, don't bubble.
+The last argument in `addEventListener()` is `useCapture`, and it specifies whether or not you want to "capture" the event. For most event types, this should be set to `false`. But certain events, like `focus`, don't bubble.
 
 Setting `useCapture` to `true` allows you to take advantage of event bubbling for events that otherwise don't support it.
 
@@ -119,3 +102,7 @@ document.addEventListener('focus', function (event) {
 	// Run functions whenever an element in the document comes into focus
 }, false);
 ```
+
+## Browser Compatibility
+
+`addEventListener` works in all modern browsers, and IE9 and above.

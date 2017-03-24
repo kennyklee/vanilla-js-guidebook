@@ -1,51 +1,11 @@
 
 # Loops
 
-## jQuery
-
-In jQuery, you can iterate of arrays, objects, and node lists with the `.each()` method.
-
-```javascript
-// Arrays
-var sandwiches = [
-	'tuna',
-	'ham',
-	'turkey',
-	'pb&j'
-];
-
-$.each(sandwiches, function( index, sandwich ) {
-	console.log( index ) // index
-	console.log( sandwich ) // value
-});
-
-
-// Objects
-var lunch = {
-	sandwich: 'ham',
-	snack: 'chips',
-	drink: 'soda',
-	desert: 'cookie',
-	guests: 3,
-	alcohol: false,
-};
-
-$.each(lunch, function( key, item ) {
-	console.log( key ) // key
-	console.log( item ) // item
-});
-```
-
+Loop through arrays, objects, and node lists.
 
 ## Arrays and Node Lists
 
 In vanilla JavaScript, you can use `for` to loop through array and node list items.
-
-- In the first part of the loop, before the first semicolon, we set a counter variable (typically `i`, but it can be anything) to `0`.
-- The second part, between the two semicolons, is the test we check against after each iteration of the loop. In this case, we want to make sure the counter value is less than the total number of items in our array.
-- Finally, after the second semicolon, we specify what to run after each loop. In this case, we're adding `1` to the value of `i`.
-
-We can then use `i` to grab the current item in the loop from our array.
 
 ```javascript
 var sandwiches = [
@@ -59,9 +19,19 @@ for ( var i = 0; i < sandwiches.length; i++ ) {
 	console.log(i) // index
 	console.log( sandwiches[i] ) // value
 }
+
+// returns 0, tuna, 1, ham, 2, turkey, 3, pb&j
 ```
 
-Any variables you set in the `for` part of the loop are global in scope, so if you tried to include a second loop with `var i` you would get an error. You can use a different variable, or define `var i` and set it's value in the loop.
+- In the first part of the loop, before the first semicolon, we set a counter variable (typically `i`, but it can be anything) to `0`.
+- The second part, between the two semicolons, is the test we check against after each iteration of the loop. In this case, we want to make sure the counter value is less than the total number of items in our array. We do this by checking the `.length` of our array.
+- Finally, after the second semicolon, we specify what to run after each loop. In this case, we're adding `1` to the value of `i` with `i++`.
+
+We can then use `i` to grab the current item in the loop from our array.
+
+### Multiple loops on a page
+
+Variables you set in the `for` part of the loop are not scoped to the loop, so if you tried to include a second loop with `var i` you would get an error. You can use a different variable, or define `var i` outside of the loop and set it's value in the loop.
 
 ```javascript
 for ( var n = 0; n < sandwiches.length; n++ ) {
@@ -74,6 +44,8 @@ for ( i = 0; i < sandwiches.length; i++ ) {
 	// Do stuff...
 }
 ```
+
+### Skip and End
 
 You can skip to the next item in a loop using `continue`, or end the loop altogether with `break`.
 
@@ -91,10 +63,14 @@ for ( var n = 0; n < sandwiches.length; n++ ) {
 }
 ```
 
+### Browser Compatibility
+
+Supported in all modern browsers, and at least back to IE6.
+
 
 ## Objects
 
-You can also use a `for` loop for objects, though the structure is just a little different. The first part, `item`, is a variable that gets assigned to the object key on each loop. The second part (in this case, `lunch`), is the object to loop over.
+You can also use a `for` loop for objects, though the structure is just a little different. The first part, `key`, is a variable that gets assigned to the object key on each loop. The second part (in this case, `lunch`), is the object to loop over.
 
 We also want to check that the property belongs to this object, and isn't inherited from further up the object chain (for nested or *deep* objects).
 
@@ -108,20 +84,26 @@ var lunch = {
 	alcohol: false,
 };
 
-for ( var item in lunch ) {
-	if ( Object.prototype.hasOwnProperty.call( lunch, item ) ) {
-		console.log( item ); // key
-		console.log( lunch[item] ); // value
+for ( var key in lunch ) {
+	if ( Object.prototype.hasOwnProperty.call( lunch, key ) ) {
+		console.log( key ); // key
+		console.log( lunch[key] ); // value
 	}
 }
+
+// returns sandwich, ham, snack, chips, drink, soda, desert, cookie, guests, 3, alcohol, false
 ```
+
+### Browser Compatibility
+
+Supported in all modern browsers, and IE6 and above.
 
 
 ## forEach Helper Method
 
-If you use loops a lot, you may want to use Todd Motto's helpful `forEach()` method.
+If you use loops a lot, you may want to use Todd Motto's helpful `forEach()` method^[[https://github.com/toddmotto/foreach](https://github.com/toddmotto/foreach)].
 
-It checks to see if you've passed in an array or object and uses the correct `for` loop automatically. It also gives you a more jQuery-like syntax.
+It checks to see whether you've passed in an array or object and uses the correct `for` loop automatically. It also gives you a more jQuery-like syntax.
 
 ```javascript
 /*! foreach.js v1.1.0 | (c) 2014 @toddmotto | https://github.com/toddmotto/foreach */
@@ -158,3 +140,7 @@ forEach(lunch, function (item, key) {
 ```
 
 It's worth mentioning that because the helper uses a function, you can only skip to the next item using `return`. There's no way to terminate the loop entirely.
+
+### Browser Compatibility
+
+Supported in all modern browsers, and IE6 and above.

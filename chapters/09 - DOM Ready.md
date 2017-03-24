@@ -1,28 +1,18 @@
 
 # DOM Ready
 
-**Note:** If you're loading your scripts in the footer (which you should be for performance reasons), the `ready()` method isn't really needed. It's just a habit from the "load everything in the header" days.
+Wait until the DOM is ready before running code.
 
-## jQuery
-
-jQuery uses the `.ready()` method to wait until the DOM is ready before running code.
-
-```javascript
-$( document ).ready(function() {
-    // Do stuff...
-});
-```
+**Note:** *If you're loading your scripts in the footer (which you should be for performance reasons), the `ready()` method isn't really needed. It's just a habit from the "load everything in the header" days.*
 
 
-## Vanilla JavaScript
+Vanilla JavaScript provides a native way to do this: the `DOMContentLoaded` event for `addEventListener`.
 
-Vanilla JavaScript does provide a native API to handle this: the `DOMContentLoaded` event for `addEventListener`.
+**But...** if the DOM is already loaded by the time you call your event listener, the event never happens and your function never runs.
 
-The challenge is that if the DOM is already loaded by the time you call your event listener, the event never happens and your function never runs.
+Below is a super lightweight helper method that does the same thing as jQuery's `ready()` method. This helper method does two things:
 
-Here's a super lightweight helper method that does the same thing as jQuery's `ready()` method. This helper method is doing two things:
-
-1. Checking to see if the document is already `interactive` or `complete`. If so, it runs your function immediately.
+1. Check to see if the document is already `interactive` or `complete`. If so, it runs your function immediately.
 2. Otherwise, it adds a listener for the `DOMContentLoaded` event.
 
 ```javascript
@@ -51,4 +41,6 @@ ready(function() {
 });
 ```
 
-If you test these, you'll see that the vanilla JavaScript version actually runs ealier than the jQuery one, even if you put the vanilla JS one second in your code.
+## Browser Compatibility
+
+Works in all modern browsers, and IE9 and above.

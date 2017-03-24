@@ -19,7 +19,7 @@ When someone clicks a link with the `.click-me` class, we want to show the conte
 
 ## IIFE and Strict Mode
 
-Just like last time, let's add an IIFE to keep our code out of the global scope. Let's also turn on strict mode so that we can aggressively debug.
+Let's start by creating an IIFE to keep our code out of the global scope. Let's also turn on strict mode so that we can aggressively debug.
 
 ```javascript
 ;(function (window, document, undefined) {
@@ -43,7 +43,7 @@ link.addEventListener('click', function (event) {
 }, false);
 ```
 
-Just like in jQuery, we can prevent the default click behavior with `event.preventDefault()`. This stops the link from changing the page URL.
+We can prevent the default click behavior with `event.preventDefault()`. This stops the link from changing the page URL.
 
 ```javascript
 var link = document.querySelector( '.click-me' );
@@ -55,9 +55,7 @@ link.addEventListener('click', function (event) {
 }, false);
 ```
 
-In jQuery, you might use `toggle()` to toggle the content visibility. This method adds or removes `display: none` as an inline style on the element.
-
-In vanilla JS, you *could* toggle `display: none` using the `style` attribute, but I think it's easier to maintain and gives you more flexibility to add these to an external stylesheet. We'll add a style that hides our content areas by default, and shows them a second class is present.
+To show and hide the content, we *could* toggle `display: none` using the `style` attribute, but I think using CSS in an external stylesheet is easier to maintain and gives you more flexibility. We'll add a style that hides our content areas by default, and shows them a second class is present.
 
 ```css
 .hide-me {
@@ -75,13 +73,13 @@ The nice thing with using a class to control visibility is that if you want a co
 
 ```html
 <div class="hide-me active" id="hide-me">
-	<p>Here's some content that I'd like to show or hide when the link is clicked.</p>
+	<p>Here's some content that I'd like open by default, and hidden when the link is clicked.</p>
 </div>
 ```
 
-Next, we'll toggle that class with JavaScript when the link is clicked using `classList`. The `.toggle()` method adds the class if it's missing, and removes it if it's present, just like jQuery's `.toggleClass()` method.
+Next, we'll toggle that class with JavaScript when the link is clicked using `classList`. The `classList.toggle()` method adds the class if it's missing, and removes it if it's present (just like jQuery's `.toggleClass()` method).
 
-We use `event.target.hash` to get the hash from the clicked link.
+We'll use `event.target.hash` to get the hash from the clicked link, and `querySelector` to get the content it points to.
 
 ```javascript
 var link = document.querySelector( '.click-me' );
@@ -91,7 +89,6 @@ link.addEventListener('click', function (event) {
 	event.preventDefault();
 
 	// Get the target content
-	// We use .hash instead of .href because .href returns the full URL, even for relative links
 	var content = document.querySelector( event.target.hash );
 
 	// If the content area doesn't exist, bail
@@ -105,7 +102,7 @@ link.addEventListener('click', function (event) {
 
 A few notes about the script above. First, we're using `.hash` instead of `.href`. Even with a relative URL like `#some-id`, `.href` will return the full URL for the page.
 
-In jQuery, if an element isn't found, jQuery silently ignores it. `querySelector` does not, and we'll get an error if we try to run any methods against a `null` element. As a result, we want to make sure the element exists before doing anything with it.
+If an element is not found with `querySelector`, our script will throw an error if we try to run any methods against the `null` element. As a result, we want to make sure the element exists before doing anything with it.
 
 
 ### What if there's more than one content area?
@@ -114,11 +111,11 @@ The code we've got so far is great when there's just a single expand-and-collaps
 
 ```html
 <p>
-	<a class="click-me" id="click-me-1" href="#hide-me">
+	<a class="click-me" id="click-me-1" href="#hide-me-1">
 		Click Me
 	</a>
 </p>
-<div class="hide-me" id="hide-me">
+<div class="hide-me" id="hide-me-1">
 	<p>Here's some content that I'd like to show or hide when the link is clicked.</p>
 </div>
 
@@ -166,9 +163,7 @@ link2.addEventListener('click', function (event) {
 }, false);
 ```
 
-Seriously, don't ever, ever do that.
-
-Instead, let's take advantage of event bubbling.
+Seriously, don't ever do that. Instead, let's take advantage of event bubbling.
 
 ### Event Bubbling
 
@@ -193,12 +188,12 @@ document.addEventListener('click', function (event) {
 }, false);
 ```
 
-Congratulations! You now have a working expand-and-collapse script in vanilla JavaScript. And, it's basically identical in size to the jQuery version.
+Congratulations! You now have a working expand-and-collapse script in vanilla JavaScript. And, it's more-or-less identical in size to the jQuery version.
 
 
 ## Cutting the Mustard
 
-We want to make sure the browser supports modern JavaScript APIs before attempting to run our code. Let's include a feature test before running our event listener.
+We want to make sure the browser supports our JavaScript functions and browser APIs before attempting to run our code. Let's include a feature test before running our event listener.
 
 We're checking for `querySelector`, `addEventListener`, and `classList`. I'm comfortable with IE10+ support for this, so I've decided to skip the polyfill for this project.
 
@@ -233,7 +228,7 @@ We're checking for `querySelector`, `addEventListener`, and `classList`. I'm com
 
 ## Progressively Enhance
 
-You may have visitors who use older browsers that don't support ES5 (think corporate users stuck on IE8). You may also have some visitors who have modern browsers but spotty connections that fail to download your JavaScript file.
+You may have visitors who use older browsers that don't support ES5 (like corporate users stuck on IE8). You may also have some visitors who have modern browsers but spotty connections that fail to download your JavaScript file (like a commuter on a train headed into a tunnel).
 
 You could have a bug in another script that cause your script to break, too. JavaScript is incredibly fragile.
 
@@ -283,3 +278,5 @@ Then we'll hook into that class in our CSS file to conditionally hide content.
 	display: block;
 }
 ```
+
+And now we have a lightweight, vanilla JavaScript expand-and-collapse widget that supports any browser that can access the web.

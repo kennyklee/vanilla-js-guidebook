@@ -47,23 +47,44 @@ I typically start at the last working piece of code, using `console.log()` to ch
 
 ## Scoping
 
-In the previous lesson, I mentioned that when you load your JavaScript in the footer (as you should for performance reasons) the jQuery and vanilla JS `ready()` methods aren't neccessary.
+In the previous lesson, I mentioned that when you load your JavaScript in the footer (as you should for performance reasons) the `ready()` method isn't neccessary.
 
-They do actually serve a useful purpose, though: scoping.
+It does actually serve a useful purpose, though: scoping.
 
-They act as a wrapper around your code, and as a result keep your variables and functions out of the global scope, where they're more likely to conflict with other scripts.
+It acts as a wrapper around your code, and as a result keeps your variables and functions out of the global scope, where they're more likely to conflict with other scripts.
 
 Since you typically won't need to use the  `ready()` method, you should wrap your scripts in what's called an IIFE, an Immediately Invoked Function Expression. An IIFE is simply an anonymous (unnamed) function that runs immediately.
 
 ```javascript
 ;(function (window, document, undefined) {
-    // Do stuff...
+	// Do stuff...
 })(window, document);
 ```
 
 Because your code is wrapped in a function, all of the variables and functions inside it are local to the IIFE. They won't override variables and functions set by other scripts, nor can they be accessed by other scripts.
 
 And if you set a variable with the same name as one in the global scope the local one takes precendence.
+
+```javascript
+// Default variables
+var sandwich = 'tuna';
+var chips = 'lays';
+
+;(function (window, document, undefined) {
+
+	// This changes the chips variable globally
+	// Without `var`, it's modifying the global variable
+	chips = 'cape cod';
+
+   // This creates a new local variable that doesn't affect or get affected by the global scope
+   var sandwich = 'turkey';
+
+})(window, document);
+
+console.log( sandwich );
+// returns 'tuna'
+// the `sandwich` variable is completely unaffected by why happens in the IIFE
+```
 
 There are times you may want to expose a function or variable to the global scope (for example, a lightweight framework you want other scripts to be able to use), and there are other ways to keep your code out of the global scope.
 

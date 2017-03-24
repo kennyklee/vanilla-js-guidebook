@@ -1,68 +1,52 @@
 
 # Attributes
 
-## jQuery
+Get and set attributes for an element.
 
-jQuery uses the `data()` method to get and set attributes on an element.
+## getAttribute(), setAttribute(), and hasAttribute()
 
-```javascript
-var $elem = $( '#a' );
-
-// Get attribute
-var dataSandwich = $elem.data( 'sandwich' );
-var elemId = $elem.data( 'id' );
-
-// Set attribute
-$elem.data( 'sandwich', 'ham' );
-$elem.data( 'id', 'abc' );
-```
-
-
-## getAttribute()
-
-The `getAttribute()` API let's you get attributes from an element.
+The `getAttribute()`, `setAttribute()`, and `hasAttribute()` methods let you get, set, and check for the existance of attributes (including data attributes) on an element.
 
 ```javascript
-var elem = document.querySelector( '#a' );
+var elem = document.querySelector( '#some-elem' );
 
-// Get the [data-sandwich] attribute value
-var dataSandwich = elem.getAttribute( 'data-sandwich' );
-```
+// Get the value of an attribute
+var sandwich = elem.getAttribute( 'data-sandwich' );
 
-It can be used to get attributes like ID, title, and so on as well, but this is better done using the attribute directly. You can view a full list of HTML attributes on the Mozilla Developer Network. ^[[https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)]
-
-```javascript
-// These do the same thing
-var elemId1 = elem.getAttribute( 'id' );
-var elemId2 = elem.id;
-```
-
-
-## setAttribute()
-
-Use `setAttribute()` to set attributes on an element.
-
-```javascript
-var elem = document.querySelector( '#a' );
+// Set an attribute value
 elem.setAttribute( 'data-sandwich', 'turkey' );
-```
 
-As with `getAttribute()`, you can use `setAttribute()` to set things like ID, title, tabindex and more, though this is better done using the attribute directly.
-
-```javascript
-// These do the same thing
-elem.setAttribute( 'title', 'Nope, turkey!' );
-elem.title = 'Nope, turkey!';
-```
-
-
-## hasAttribute()
-
-Use the `hasAttribute()` API to check if an element has a specific attribute.
-
-```javascript
-var elem = document.querySelector( '#a' );
-if ( elem.hasAttribute( 'data-snack' ) ) {
-	// Do something...
+// Check if an element has an attribute
+if ( elem.hasAttribute( 'data-sandwich' ) ) {
+	// do something...
 }
 ```
+
+These methods can also be used to manipulate other types of attributes (things like `id`, `tabindex`, `name`, and so on), but these are better done by calling the attribute on the element directly (see below).
+
+### Browser Compatibility
+
+Supported in all modern browsers, and at least back to IE6.
+
+
+## Element Attributes
+
+You can get and set attributes directly on an element. View a full list of HTML attributes on the Mozilla Developer Network.^[[https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)]
+
+```javascript
+var elem = document.querySelector( '#some-elem' );
+
+// Get attributes
+var id = elem.id;
+var name = elem.name;
+var tabindex = elem.tabindex;
+
+// Set attributes
+elem.id = 'new-id';
+elem.title = 'The title for this thing is awesome!';
+elem.tabindex = '-1';
+```
+
+### Browser Compatibility
+
+Supported in all modern browsers, and at least back to IE6.
