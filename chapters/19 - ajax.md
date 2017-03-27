@@ -26,12 +26,11 @@ atomic.get('https://jsonplaceholder.typicode.com/posts')
 	});
 
 // POST
-var data = {
+atomic.post('http://jsonplaceholder.typicode.com/posts', {
 	title: 'foo',
 	body: 'bar',
 	userId: 1
-};
-atomic.post('https://jsonplaceholder.typicode.com/posts', data)
+})
 	.success(function (data, xhr) {
 		// What do when the request is successful
 		console.log(data);

@@ -33,7 +33,7 @@ var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
 ## Check if an element is in the viewport or not
 
-`isInViewport` is a helper method I wrote to check if an element is in the viewport or not. It returns `true` if the element is in teh viewport, and `false` if it's not.
+`isInViewport` is a helper method I wrote to check if an element is in the viewport or not. It returns `true` if the element is in the viewport, and `false` if it's not.
 
 ```javascript
 /**

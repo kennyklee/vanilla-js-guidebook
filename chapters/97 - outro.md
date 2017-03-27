@@ -30,7 +30,7 @@ Some ideas to get you started.
 
 ## How to find vanilla JS open source projects
 
-I'm maintaining a growing list of third-party vanilla JavaScript plugins on the Ditching jQuery Resources page ^[[https://ditchingjquery.com/resources/](https://ditchingjquery.com/resources/)]. That's a great place to start.
+I'm maintaining a growing list of third-party vanilla JavaScript plugins on the Ditching jQuery Resources page ^[[https://github.com/cferdinandi/vanilla-js-plugins/](https://github.com/cferdinandi/vanilla-js-plugins/)]. That's a great place to start.
 
 You can also just google, `{type of script you're looking for} vanilla js`. A lot of impressive plugins either don't require any libraries or frameworks, or offer both jQuery and vanilla JavaScript versions.
 
